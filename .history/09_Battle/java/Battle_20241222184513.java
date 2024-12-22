@@ -94,6 +94,9 @@ import java.text.NumberFormat;public class Battle {
                         ship.hit(col, row);
                         ++hits;
                         System.out.println("A direct hit on ship number " + ship.id());
+
+                        // If a ship was hit, we need to know whether it was sunk.
+                        // If so, tell the player and update our counts
                         if (ship.isSunk()) {
                             ++lost;
                             System.out.println("And you sunk it.  Hurrah for the good guys.");

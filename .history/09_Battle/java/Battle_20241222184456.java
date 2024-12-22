@@ -69,11 +69,13 @@ import java.text.NumberFormat;public class Battle {
         System.out.println("Start game");
         Input input = new Input(seaSize);
         try {
-            while (lost < ships.size()) {          
-                if (! input.readCoordinates()) {   
+            while (lost < ships.size()) {          // the game continues while some ships remain unsunk
+                if (! input.readCoordinates()) {   // ... unless there is no more input from the user
                     return;
                 }
 
+                // The computer thinks of the sea as a grid of rows, from top to bottom.
+                // However, the user will use X and Y coordinates, with Y going bottom to top
                 int row = seaSize - input.y();
                 int col = input.x() - 1;
 
@@ -94,6 +96,9 @@ import java.text.NumberFormat;public class Battle {
                         ship.hit(col, row);
                         ++hits;
                         System.out.println("A direct hit on ship number " + ship.id());
+
+                        // If a ship was hit, we need to know whether it was sunk.
+                        // If so, tell the player and update our counts
                         if (ship.isSunk()) {
                             ++lost;
                             System.out.println("And you sunk it.  Hurrah for the good guys.");

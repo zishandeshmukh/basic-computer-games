@@ -137,3 +137,9 @@ import java.text.NumberFormat;public class Battle {
         }
     }
 }
+nh v b ruir 8r  u fj  = u njh ni]]jg8]g'gign hgm fg ng gig\gl mgi\
+gg og \
+ ng ng
+ gmngkgjg g
+
+ gm oigroj  kink=rgkjir  i
